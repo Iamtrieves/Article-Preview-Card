@@ -1,0 +1,207 @@
+:root {
+--Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+--Grayish-Blue: hsl(212, 23%, 69%);
+--Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--Light-Grayish-Blue);
+    font-size: 15px;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 280px 450px;
+    grid-template-rows: 300px;
+}
+
+.left {
+    background-image: url(/images/drawers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.right {
+    padding: 0 2.5rem;
+    background-color: #fff;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.right h3 {
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+    margin: 2.5rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.right p {
+    font-weight: 500;
+    color: var(--Very-Dark-Grayish-Blue);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.author_img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.name_date {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.name_date .name {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.name_date .date {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color:hsl(217, 19%, 35%);
+}
+
+.share_image {
+    background-color: var(--Light-Grayish-Blue);
+    width: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.share_box {
+    width: 300px;
+    height: 50px;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    left: 170px;
+    bottom: 60px;
+}
+
+.share_box > * {
+    margin-right: 0.9rem;
+}
+
+/* creating the little triangle at the bottom of share_box */
+.share_box:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+    content: "";
+    position: absolute;
+    right: 105px;
+    top: 50px;
+}
+
+.share_box span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: var(--Grayish-Blue);
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 80%;
+        margin: 0 auto;
+
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px;
+    }
+
+    .left {
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: unset;
+    }
+
+    .right {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 15px;
+
+    }
+
+    .author { 
+        margin-bottom: 1rem;
+    }
+
+    .share_image {
+        z-index: 5;
+
+    }
+    .share_box {
+        width: 381px;
+        height: 80px;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        align-items: center;
+        color: #fff;
+        position: absolute;
+        left: -40px;
+        bottom: -15px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .share_box:before {
+        display: none;
+    }
+
+    .share_box span{
+        margin-left: 2rem;
+    }
+}
